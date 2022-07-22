@@ -20,6 +20,8 @@ function MovieList() {
 
     const handleClick=(id)=>{
         console.log('You clicked this movie!', id)
+        dispatch({type: 'FETCH_DETAILS', payload: id})
+        history.pushState('/details')
     }
     return (
         <main>
