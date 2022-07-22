@@ -15,6 +15,24 @@ router.get('/', (req, res) => {
     })
 
 });
+//get all of the details of the movie
+router.get('/:id', (req, res) => {
+  movieId=req.params.id
+  console.log('Here is the movieId in router.get', movieId)
+  const queryText = `SELECT * FROM "movies_genres"
+  JOIN "genres" ON "movies_genres"."genre_id" = "genres"."id"
+  JOIN "movies" ON "movies_genres"."movie_id" = "movies"."id"
+  WHERE "movie_id" = ${movieId};`;
+  pool.query(queryText)
+    .then( result => {
+      res.send(result.rows);
+    })
+    .catch(err => {
+      console.log('ERROR: Get all genres', err);
+      res.sendStatus(500)
+    })
+  res.sendStatus(500)
+});
 
 router.post('/', (req, res) => {
   console.log(req.body);
