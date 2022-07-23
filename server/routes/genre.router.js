@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
   pool.query(query)
     .then( result => {
       res.send(result.rows);
+      console.log('Here are the rows in genres get', result.rows)
     })
     .catch(err => {
       console.log('ERROR: Get all genres', err);
