@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
   yield takeEvery('FETCH_DETAILS', fetchDetails);
+  yield takeEvery('FETCH_GENRES', fetchAllGenres);
 }
 
 function* fetchAllMovies() {
@@ -23,8 +24,19 @@ function* fetchAllMovies() {
     const movies = yield axios.get('/api/movie');
     console.log('get all:', movies.data);
     yield put({type: 'SET_MOVIES', payload: movies.data});
-  } catch {
-    console.log('get all error');
+  } catch (error){
+    console.log('get all movies error', error);
+  }
+}
+
+function* fetchAllGenres() {
+  // get all genres from the DB
+  try {
+    const genres = yield axios.get('/api/genre');
+    console.log('get all:', genres.data);
+    yield put({type: 'SET_GENRES', payload: genres.data});
+  } catch (error) {
+    console.log('get all genres error', error);
   }
 }
 //get all details of one movie
@@ -57,6 +69,7 @@ const movies = (state = [], action) => {
 const genres = (state = [], action) => {
   switch (action.type) {
     case 'SET_GENRES':
+        console.log('Here is the genres in reducer', action.payload)
       return action.payload;
     default:
       return state;

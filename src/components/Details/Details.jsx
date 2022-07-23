@@ -15,7 +15,7 @@ console.log('In Details')
     const details = useSelector(store => store.details);
     const genres=details.genres
     const history = useHistory();
-    const handleClick=(id)=>{
+    const handleClick=()=>{
         
         console.log('Go back to the list.')
 history.push('/')
