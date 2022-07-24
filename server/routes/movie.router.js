@@ -30,9 +30,8 @@ router.get('/:id', (req, res) => {
   pool
     .query(queryText, [movieId])
     .then((result) => {
-      console.log('Here are the rows from the database', result.rows)
+      console.log('Here are the rows from the database', result.rows);
       res.send(result.rows);
-
     })
     .catch((err) => {
       console.log('ERROR: Get all details', err);
@@ -40,6 +39,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//posting a new movie to the database
 router.post('/', (req, res) => {
   console.log(req.body);
   // RETURNING "id" will give us back the id of the created movie

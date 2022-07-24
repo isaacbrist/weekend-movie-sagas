@@ -16,16 +16,17 @@ function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
   yield takeEvery('FETCH_DETAILS', fetchDetails);
   yield takeEvery('FETCH_GENRES', fetchAllGenres);
+  yield takeEvery('ADD_NEW_MOVIE', addNewMovie)
 }
 
 function* fetchAllMovies() {
   // get all movies from the DB
   try {
     const movies = yield axios.get('/api/movie');
-    console.log('get all:', movies.data);
+    console.log('Get all movies:', movies.data);
     yield put({type: 'SET_MOVIES', payload: movies.data});
   } catch (error){
-    console.log('get all movies error', error);
+    console.log('Get all movies error', error);
   }
 }
 
@@ -33,10 +34,10 @@ function* fetchAllGenres() {
   // get all genres from the DB
   try {
     const genres = yield axios.get('/api/genre');
-    console.log('get all:', genres.data);
+    console.log('Get all genres:', genres.data);
     yield put({type: 'SET_GENRES', payload: genres.data});
   } catch (error) {
-    console.log('get all genres error', error);
+    console.log('Get all genres error', error);
   }
 }
 //get all details of one movie
@@ -51,6 +52,17 @@ function* fetchDetails(action) {
   } catch (error) {
     console.log('error in fetchDetails', error);
   }
+}
+//Adding a new movie to the database
+function* addNewMovie(action){
+    try{
+        const newMovie = action.payload;
+        console.log('Here is the new movie', newMovie);
+        yield axios.post('/api/movie', newMovie)
+        yield put({type: 'FETCH_MOVIES'})
+    } catch (error){
+        console.log('Error in index-Adding a new movie', error)
+    }
 }
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -84,6 +96,8 @@ const details = (state = {}, action) => {
       return state;
   }
 };
+
+
 // Create one store that all components can use
 const storeInstance = createStore(
   combineReducers({
