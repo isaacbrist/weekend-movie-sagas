@@ -7,8 +7,6 @@
 - [Screenshots](#screenshots)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
