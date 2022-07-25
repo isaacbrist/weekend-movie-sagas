@@ -1,15 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
 import './MovieList.css'
-import { experimentalStyled as styled } from '@mui/material/styles';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@mui/material/CardContent';
 import MovieListItem from '../MovieListItem/MovieListItem';
 
 function MovieList() {
@@ -29,8 +22,9 @@ function MovieList() {
             <section className="movies">
                 <Grid container spacing={5}>
                 {movies.map(movie => (
-                        <Grid item key={movie.id} sm={3}>
-                           <MovieListItem movie={movie}/>
+                        <Grid item key={movie.id} xs={2}>
+                           <MovieListItem movie={movie}
+                            />
                         </Grid>
                     )
                 )}

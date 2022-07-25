@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom'
-
+import './MovieListItem.css'
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -17,15 +17,7 @@ import Paper from '@material-ui/core/Paper';
 function MovieListItem({movie}){
     const history = useHistory()
     const dispatch = useDispatch();
-//     <Paper >
-                                
-//     <Card key={movie.id} >
-//         <CardActionArea>
-//         <Typography gutterBottom variant="h5" component="h3">{movie.title}</Typography>
-//         <img src={movie.poster} alt={movie.title}/>
-//         </CardActionArea>
-//     </Card>
-// </Paper>
+//
 const handleClick=(id)=>{
     console.log('You clicked this movie!', id)
     dispatch({type: 'FETCH_DETAILS', payload: id})
@@ -34,19 +26,17 @@ const handleClick=(id)=>{
     return(
         <div>
             <Paper
+            className="bColor"
              direction="row"
              justifycontent="center"
              alignitems="center"
              onClick={() => handleClick(movie.id)}>
-                    {/* <CardHeader
-                    action={
-                        <IconButton>
-                            <DeleteOutlined/>
-                        </IconButton>
-                    }/> */}
-                    <Card>
+                   
+                    <Card >
+                    <div className="bColor">
                     <CardActionArea>
                     <Typography 
+                    
                     gutterBottom variant="h5" 
                     component="h3">{movie.title}</Typography>
                     <CardContent>
@@ -57,6 +47,7 @@ const handleClick=(id)=>{
                     />
                     </CardContent>
                     </CardActionArea>
+                    </div>
                     </Card>
             </Paper>
         </div>
