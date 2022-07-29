@@ -1,4 +1,3 @@
-![License](https://img.shields.io/github/license/isaacbrist/isaacbrist/weekend-redux-feedback-loop.svg?style=for-the-badge) ![Repo Size](https://img.shields.io/github/languages/code-size/isaacbrist/isaacbrist/weekend-redux-feedback-loop.svg?style=for-the-badge) ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/isaacbrist/isaacbrist/weekend-redux-feedback-loop.svg?style=for-the-badge) ![FORKS](https://img.shields.io/github/forks/isaacbrist/isaacbrist/weekend-redux-feedback-loop.svg?style=for-the-badge&social) ![Stars](https://img.shields.io/github/stars/isaacbrist/isaacbrist/weekend-redux-feedback-loop.svg?style=for-the-badge)
 
 # weekend-redux-feedback-loop
 
@@ -8,8 +7,6 @@
 - [Screenshots](#screenshots)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
