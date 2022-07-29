@@ -2,3 +2,8 @@
 .bColor{
     background-color: #CCD5AE; 
 }
+
+.qrCode{
+    max-height: 100px;
+    max-width: 100px;
+}

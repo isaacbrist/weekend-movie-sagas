@@ -20,6 +20,10 @@
     "redux-logger": "^3.0.6",
     "redux-saga": "^1.1.3"
   },
+  "engines": {
+    "node": "16.x",
+    "npm": "7.x"
+  },
   "devDependencies": {
     "nodemon": "^2.0.4"
   },

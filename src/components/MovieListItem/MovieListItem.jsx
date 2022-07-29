@@ -44,9 +44,11 @@ const handleClick=(id)=>{
                       component="img"
                       image={movie.poster} 
                       alt={movie.title}
+                      
                     />
                     </CardContent>
                     </CardActionArea>
+                    <img src="https://qrickit.com/api/qr.php?d=http://localhost:3000/#/details" className="qrCode"/>
                     </div>
                     </Card>
             </Paper>
