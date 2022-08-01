@@ -23,7 +23,8 @@ if (process.env.DATABASE_URL) {
         ssl: { rejectUnauthorized: false },
         max: 10, // max number of clients in the pool
         idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
-    
+        user: 'postgres',
+        password: 'postgres'
     };
 
 } else {
@@ -36,7 +37,8 @@ if (process.env.DATABASE_URL) {
         database: process.env.DATABASE_NAME || 'saga_movies_weekend', //env var: PGDATABASE or the name of your database (e.g. database: process.env.DATABASE_NAME || 'koala_holla',)
         max: 10, // max number of clients in the pool
         idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
-
+        user: 'postgres',
+        password: 'postgres'
     };
 }
 
