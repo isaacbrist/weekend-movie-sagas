@@ -48,7 +48,7 @@ const handleClick=(id)=>{
                     />
                     </CardContent>
                     </CardActionArea>
-                    <img src="https://qrickit.com/api/qr.php?d=https://intense-gorge-67732.herokuapp.com/#/details" className="qrCode"/>
+                   
                     </div>
                     </Card>
             </Paper>
